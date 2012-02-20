@@ -1,10 +1,4 @@
-# setup
-require './middleware/middleware_start.rb'
-require './app'
+# This file is used by Rack-based servers to start the application.
 
-# middleware
-use NewRelic::MiddlewareStart
-use Rack::ShowExceptions
-
-# app
-run App
+require ::File.expand_path('../config/environment',  __FILE__)
+run Newrelic::Application
