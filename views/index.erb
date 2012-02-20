@@ -3,4 +3,9 @@
   <% env.sort.select{|k,v| k[/^http_.*_start$/i]}.each do |(k,v)| %>
     <p><%= k %>: <%= v %></p>
   <% end %>
+  <h2>Times</h2>
+  <p>Times calculated according to this: http://newrelic.com/docs/features/tracking-front-end-time#implementation</p>
+  <p>Server time: <%= @server_time %></p>
+  <p>Queue time: <%= @queue_time %></p>
+  <p>Middleware time: <%= @middleware_time %></p>
 </code>
