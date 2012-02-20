@@ -1,6 +1,6 @@
 <code>
   <h2>Env</h2>
-  <% env.sort.select{|k,v| k[/^http_*_start^/i]}.each do |(k,v)| %>
+  <% env.sort.select{|k,v| k[/^http_.*_start$/i]}.each do |(k,v)| %>
     <p><%= k %>: <%= v %></p>
   <% end %>
 </code>
