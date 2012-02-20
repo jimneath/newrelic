@@ -10,9 +10,9 @@ class App < Sinatra::Base
 
   # routes
   get '/' do
-    request_start = headers['HTTP_X_REQUEST_START'][/\d+$/].to_i
-    queue_start = headers['HTTP_X_QUEUE_START'][/\d+$/].to_i
-    middleware_start = headers['HTTP_X_MIDDLEWARE_START'][/\d+$/].to_i
+    request_start = env['HTTP_X_REQUEST_START'][/\d+$/].to_i
+    queue_start = env['HTTP_X_QUEUE_START'][/\d+$/].to_i
+    middleware_start = env['HTTP_X_MIDDLEWARE_START'][/\d+$/].to_i
     now = Time.now.to_i
 
     @server_time = queue_start - request_start
