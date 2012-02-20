@@ -10,6 +10,6 @@ class App < Sinatra::Base
 
   # routes
   get '/' do
-    ENV.inspect
+    erb :index
   end
 end

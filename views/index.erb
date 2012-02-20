@@ -1,1 +1,10 @@
-index
+<code>
+  <h2>Env</h2>
+  <% env.sort.select{|k,v| k[/^HTTP/i]}.each do |(k,v)| %>
+    <p><%= k %>: <%= v %></p>
+  <% end %>
+  <h2>Headers</h2>
+  <% headers.sort.each do |(k,v)| %>
+    <p><%= k %>: <%= v %></p>
+  <% end %>
+</code>
